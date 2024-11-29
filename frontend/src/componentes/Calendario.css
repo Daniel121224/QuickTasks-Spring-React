@@ -1,0 +1,96 @@
+/* Calendario.css */
+
+/* Estilos para el contenedor del calendario */
+.calendar-container {
+    height: 800px; /* Altura deseada para el calendario */
+  }
+  
+  /* Estilos para el título del evento */
+  .event-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para la descripción del evento */
+  .event-desc {
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  
+  /* Estilos para el contenedor del popover del evento */
+  .event-popover {
+    max-width: 400px; /* Ancho máximo del popover */
+  }
+  
+  /* Estilos para el botón de cierre del popover */
+  .event-close-btn {
+    float: right;
+    margin-top: -5px;
+    margin-right: -10px;
+  }
+  
+  /* Estilos para el botón de acción del evento en el popover */
+  .event-action-btn {
+    margin-top: 10px;
+  }
+  
+  /* Estilos para el encabezado del calendario */
+  .calendar-header {
+    background-color: #f0f0f0; /* Color de fondo del encabezado */
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Borde inferior */
+  }
+  
+  /* Estilos para el día actual del calendario */
+  .current-day {
+    background-color: #f0f8ff; /* Color de fondo para el día actual */
+  }
+  
+  /* Estilos para los días de la semana */
+  .weekday {
+    font-weight: bold;
+  }
+  
+  /* Estilos para los números de la semana */
+  .week-number {
+    font-size: 12px;
+    opacity: 0.6;
+  }
+  
+  /* Estilos para los nombres de los eventos en el día */
+  .day-event {
+    font-size: 14px;
+    margin-top: 2px;
+  }
+  
+  /* Estilos para los colores de los eventos */
+  .event-color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 50%;
+  }
+  
+  /* Estilos para los bordes de los eventos */
+  .event-border {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  
+  /* Estilos para los botones de navegación del calendario */
+  .calendar-nav-btn {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  /* Estilos para el footer del calendario */
+  .calendar-footer {
+    background-color: #f0f0f0; /* Color de fondo para el footer */
+    padding: 10px;
+    border-top: 1px solid #ccc; /* Borde superior */
+  }
+  
+  /* Estilos adicionales según sea necesario */
+  
