@@ -1,29 +1,29 @@
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\repositorio\IUsuarioRepository.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\BackendClientesApplication.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\servicio\EquipoService.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\repositorio\IEquipoRepository.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\servicio\EntornoTrabajoService.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\controlador\TareaController.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\servicio\TareaService.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\controlador\UsuarioController.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\controlador\EntornoTrabajoController.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\controlador\Operation.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\modelo\Equipo.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\modelo\EntornoTrabajo.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\servicio\IEquipoService.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\exception\ExceptionResponse.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\modelo\LoginDto.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\modelo\Tarea.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\modelo\Usuario.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\repositorio\IUsuarioEquipoRepository.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\servicio\IUsuarioService.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\servicio\IUsuarioEquipoService.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\repositorio\IEntornoTrabajoRepository.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\modelo\UsuarioEquipo.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\servicio\IEntornoTrabajoService.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\controlador\UsuarioEquipoController.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\servicio\UsuarioEquipoService.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\servicio\ITareaService.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\controlador\EquipoController.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\repositorio\ITareaRepository.java
-C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VII\Entornos\QuickTasks-UIS\QuickTasksUis\src\main\java\uis\edu\entornos\backendClientes\servicio\UsuarioService.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\BackendClientesApplication.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\servicio\IEntornoTrabajoService.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\modelo\Tarea.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\servicio\EquipoService.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\controlador\UsuarioController.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\exception\ExceptionResponse.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\repositorio\IEquipoRepository.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\controlador\EntornoTrabajoController.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\modelo\UsuarioEquipo.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\servicio\IEquipoService.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\controlador\TareaController.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\modelo\EntornoTrabajo.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\servicio\IUsuarioService.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\servicio\EntornoTrabajoService.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\controlador\Operation.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\repositorio\ITareaRepository.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\servicio\UsuarioService.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\modelo\LoginDto.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\repositorio\IUsuarioEquipoRepository.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\controlador\UsuarioEquipoController.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\modelo\Usuario.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\servicio\ITareaService.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\servicio\UsuarioEquipoService.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\servicio\TareaService.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\controlador\EquipoController.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\repositorio\IEntornoTrabajoRepository.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\repositorio\IUsuarioRepository.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\modelo\Equipo.java
+C:\Users\roble\Documents\ACTIVIDADES U\SEMESTRE VIII\Ingenieria de software I\QuickTasks-Spring-React\backend\src\main\java\uis\edu\entornos\backendClientes\servicio\IUsuarioEquipoService.java
