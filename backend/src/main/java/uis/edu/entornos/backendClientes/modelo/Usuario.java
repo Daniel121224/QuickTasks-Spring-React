@@ -1,8 +1,13 @@
 package uis.edu.entornos.backendClientes.modelo;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+import java.util.List;
+
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
@@ -29,6 +34,31 @@ public class Usuario {
     @Column(name = "contraseña", nullable = false, length = 70)
     private String contraseña;
     
+    @OneToMany(mappedBy = "usuario")
+    private List<Proyecto> proyectos;
+
+    //@OneToMany(mappedBy = "usuario")
+    //private List<Tarea> tareas;
+    
+    @JsonManagedReference //Para evitar el bucle de serialización con llaves foráneas
+    public List<Proyecto> getProyectos(){
+        return proyectos;
+    }
+    
+    //@JsonManagedReference //Para evitar el bucle de serialización con llaves foráneas
+    //public List<Tarea> getTareas(){
+    //    return tareas;
+    //}
+
+    public void setProyectos(List<Proyecto> proyectos){
+        this.proyectos = proyectos;
+    }
+
+    //public void setTareas(List<Tarea> tareas){
+    //    this.tareas = tareas;
+    //}
+
+
     public Integer getIdUsuario(){
         return idUsuario;
     }

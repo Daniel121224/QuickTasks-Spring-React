@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.web.bind.annotation.RequestBody;
+//import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import uis.edu.entornos.backendClientes.modelo.Tarea;
 import uis.edu.entornos.backendClientes.servicio.TareaService;
 
@@ -41,7 +42,7 @@ public class TareaController {
     }
 
     //Crear una tarea
-    @PostMapping("/")
+    @PostMapping("/create")
     public ResponseEntity<Tarea> create(@RequestBody Tarea tarea){
         return new ResponseEntity<>(tareaService.create(tarea), HttpStatus.CREATED);   
     }

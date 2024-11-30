@@ -1,5 +1,6 @@
 package uis.edu.entornos.backendClientes.modelo;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
@@ -17,23 +18,30 @@ public class Tarea {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTarea;
 
-    @Column(name = "nombreTarea", nullable = false, length = 100)
+    @Column(name = "nombre_tarea", nullable = false, length = 100)
     private String nombreTarea;
 
-    @Column(name = "descripcionTarea", nullable = false, length = 255)
+    @Column(name = "descripcion_tarea", nullable = false, length = 255)
     private String descripcionTarea;
 
-    @Column(name = "clasificacionTarea", nullable = false, length = 50)
-    private String clasificacionTarea;
+    @Column(name = "fechaEntrega_tarea", nullable = false, length = 50)
+    private String fechaEntregaTarea;
+
+    @Column(name = "completada", nullable = false)
+    private boolean completada;
+
+    //Me dio problemas al tener dos llaves foraneas la clase tarea
+    //@ManyToOne
+    //@JoinColumn(name = "idUsuario", referencedColumnName = "idUsuario")
+    //@JsonBackReference
+    //private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name = "idUsuario", referencedColumnName = "idUsuario")
-    private Usuario usuario;
+    @JoinColumn(name = "idProyecto", referencedColumnName = "idProyecto")
+    @JsonBackReference
+    private Proyecto proyecto;
 
-    @ManyToOne
-    @JoinColumn(name = "idEntorno", referencedColumnName = "idEntorno")
-    private EntornoTrabajo entornoTrabajo;
-
+    // Getters y Setters
     public Integer getIdTarea() {
         return idTarea;
     }
@@ -58,27 +66,35 @@ public class Tarea {
         this.descripcionTarea = descripcionTarea;
     }
 
-    public String getClasificacionTarea() {
-        return clasificacionTarea;
+    public String getFechaEntregaTarea() {
+        return fechaEntregaTarea;
     }
 
-    public void setClasificacionTarea(String clasificacionTarea) {
-        this.clasificacionTarea = clasificacionTarea;
+    public void setFechaEntregaTarea(String fechaEntregaTarea) {
+        this.fechaEntregaTarea = fechaEntregaTarea;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public boolean isCompletada() {
+        return completada;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setCompletada(boolean completada) {
+        this.completada = completada;
     }
 
-    public EntornoTrabajo getEntornoTrabajo() {
-        return entornoTrabajo;
+    //public Usuario getUsuario() {
+    //    return usuario;
+    //}
+
+    //public void setUsuario(Usuario usuario) {
+    //    this.usuario = usuario;
+    //}
+
+    public Proyecto getProyecto() {
+        return proyecto;
     }
 
-    public void setEntornoTrabajo(EntornoTrabajo entornoTrabajo) {
-        this.entornoTrabajo = entornoTrabajo;
+    public void setProyecto(Proyecto proyecto) {
+        this.proyecto = proyecto;
     }
 }

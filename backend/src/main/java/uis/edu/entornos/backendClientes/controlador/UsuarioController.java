@@ -43,10 +43,10 @@ public class UsuarioController {
     }
 
     //Crear un usuario
-    @PostMapping("/l")
+    @PostMapping("/create")
     public ResponseEntity<Usuario> create(@RequestBody Usuario usuario){
-    return new ResponseEntity<>(usuarioService.create(usuario), HttpStatus.CREATED);   
-}
+        return new ResponseEntity<>(usuarioService.create(usuario), HttpStatus.CREATED);   
+    }
 
     @PostMapping("/loginclient")
     public int login(@RequestBody LoginDto usuario){
@@ -60,7 +60,7 @@ public class UsuarioController {
     }
 
     //Actualizar usuario
-    @PutMapping("/l")
+    @PutMapping("/update")
     public ResponseEntity<Usuario> update(@RequestBody Usuario usuario){
         return usuarioService.findById(usuario.getIdUsuario())
         .map(c -> ResponseEntity.ok(usuarioService.update(usuario)))
