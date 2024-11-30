@@ -20,10 +20,9 @@ public class Usuario {
     
     @Column(name = "correo", nullable = false, length = 70)
     private String correo;
-
-    @Column(name = "apellido", nullable = false, length = 70)
-    private String apellido;
-
+    
+    //Se eliminó el atributo apellido
+    
     @Column(name = "documento", nullable = false, length = 70)
     private String documento;
     
@@ -46,14 +45,8 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getApellido(){
-        return apellido;
-    }
-
-    public void setApellido(String apellido){
-        this.apellido = apellido;
-    }
-
+    //Se eliminó el get y set de apellido
+    
     public String getDocumento(){
         return documento;
     }
