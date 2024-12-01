@@ -28,21 +28,21 @@ const Home = () => {
                             <div class="col-lg-3 col-6">
                                 <div className="small-box bg-success">
                                     <div className="inner">
-                                        <h3>Entornos</h3>
-                                        <p>Asignaturas o Proyectos</p>
+                                        <h3>Proyectos</h3>
+                                        <p>Asignaturas o áreas</p>
                                     </div>
                                     <div className="icon">
                                         <i className="fa fa-edit" />
                                     </div>
-                                    <Link to={"/entornos-admin"} className="small-box-footer">Ver Entornos <i className="fas fa-arrow-circle-right" /></Link>
+                                    <Link to={"/entornos-admin"} className="small-box-footer">Ver Proyectos <i className="fas fa-arrow-circle-right" /></Link>
                                 </div>
                             </div>
 
                             <div className="col-lg-3 col-6">
                                 <div className="small-box bg-primary">
                                     <div className="inner">
-                                        <h3>Equipos</h3>
-                                        <p>Equipos de trabajo</p>
+                                        <h3>Tareas</h3>
+                                        <p>Tareas sin agrupar</p>
                                     </div>
                                     <div className="icon">
                                         <i className="fa fa-users" />

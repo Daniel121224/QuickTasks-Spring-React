@@ -8,26 +8,25 @@ import APIInvoke from '../../utils/APIInvoke';
 import swal from 'sweetalert';
 import fondoVerde from '../../assets/fondoverde.jpg';
 
-const EntornosAdmin = () => {
+const ProyectosAdmin = () => {
 
-    const [entornos, setEntornos] = useState([]);
+    const [proyectos, setProyectos] = useState([]);
 
-    const cargarEntornos = async () => {
-        const response = await APIInvoke.invokeGET('/listarAllEntorno');
-        //console.log(response.result);
-        setEntornos(response.result);
+    const cargarProyectos = async () => {
+        const response = await APIInvoke.invokeGET('/api/proyecto/list'); // Cambié la ruta a /api/proyecto/list
+        setProyectos(response); // Aquí asumo que el API devuelve directamente el array de proyectos
     }
 
     useEffect(() => {
-        cargarEntornos();
+        cargarProyectos();
     }, []);
 
-    const eliminarEntorno = async (e, idEntorno) => {
+    const eliminarProyecto = async (e, idProyecto) => {
         e.preventDefault();
-        const response = await APIInvoke.invokeDELETE(`/eliminarEntorno/${idEntorno}`);
+        const response = await APIInvoke.invokeDELETE(`/api/proyecto/${idProyecto}`); // Cambié la ruta de 'eliminarEntorno' a 'eliminarProyecto'
 
-        if (response.message === "Entorno eliminado con éxito") {
-            const message = 'El entorno fue eliminado con éxito';
+        if (response.message === "Proyecto eliminado con éxito") {
+            const message = 'El proyecto fue eliminado con éxito';
                 swal({
                     title: 'Información',
                     text: message,
@@ -42,9 +41,9 @@ const EntornosAdmin = () => {
                         }
                     }
                 });
-                cargarEntornos();
+                cargarProyectos();
         } else {
-            const message = 'No fue posible eliminar el entorno';
+            const message = 'No fue posible eliminar el proyecto';
                 swal({
                     title: 'Error',
                     text: message,
@@ -78,7 +77,7 @@ const EntornosAdmin = () => {
                 <section className="content">
                     <div className="card">
                         <div className="card-header">
-                            <h3 className="card-title"><Link to={"/entornos-crear"} className="btn btn-block btn-primary btn-sm">Agregar Proyecto</Link></h3>
+                            <h3 className="card-title"><Link to={"/proyectos-crear"} className="btn btn-block btn-primary btn-sm">Agregar Proyecto</Link></h3>
                             <div className="card-tools">
                                 <button type="button" className="btn btn-tool" data-card-widget="collapse" title="Collapse">
                                     <i className="fas fa-minus" />
@@ -92,30 +91,38 @@ const EntornosAdmin = () => {
                             <table className="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th style={{ width: '10%' }}>Id</th>
-                                        <th style={{ width: '55%' }}>Nombre</th>
-                                        <th style={{ width: '10%' }}>No. miembros</th>
-                                        <th style={{ width: '25%' }}>Opciones</th>
+                                        <th>ID</th>
+                                        <th>Nombre del Proyecto</th>
+                                        <th>Progreso</th>
+                                        <th>Tareas</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
                                     {
-                                        entornos.map(
-                                            item => 
-                                                <tr key={item._id}>
-                                                    <td>{item._id}</td>
-                                                    <td>{item.nombre_entorno}</td>
-                                                    <td>{item.cantidad_participantes}</td>
-                                                    <td>
-                                                        <Link to={`/tareas-admin/${item._id}@${item.nombre_entorno}`} className="btn btn-primary btn-info">Tareas</Link>&nbsp; &nbsp;
-                                                        <Link to={`/entornos-editar/${item._id}@${item.nombre_entorno}@${item.cantidad_participantes}`} className="btn btn-primary btn-primary">Editar</Link>&nbsp; &nbsp;
-                                                        <button  onClick={(e)=> eliminarEntorno(e, item._id)} className="btn btn-primary btn-danger">Borrar</button>
-                                                    </td>
-                                                </tr>
-                                        )
+                                        proyectos.map((item) => (
+                                            <tr key={item.idProyecto}>
+                                                <td>{item.idProyecto}</td>
+                                                <td>{item.nombreProyecto}</td>
+                                                <td>{item.progreso}%</td>
+                                                <td>
+                                                    <ul>
+                                                        {item.tareas.map((tarea) => (
+                                                            <li key={tarea.idTarea}>
+                                                                {tarea.nombreTarea} - {tarea.descripcionTarea}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </td>
+                                                <td>
+                                                    <Link to={`/tareas-admin/${item.idProyecto}@${item.nombreProyecto}`} className="btn btn-info">Ver Tareas</Link>
+                                                    <button onClick={(e) => eliminarProyecto(e, item.idProyecto)} className="btn btn-danger">Eliminar</button>
+                                                </td>
+                                            </tr>
+                                        ))
                                     }
-                                    
+                                  
                                 </tbody>
                             </table>
 
@@ -129,4 +136,4 @@ const EntornosAdmin = () => {
     );
 }
 
-export default EntornosAdmin;
+export default ProyectosAdmin;

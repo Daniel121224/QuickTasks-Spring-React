@@ -45,7 +45,7 @@ const Acerca = () => {
                                         <br /> Estudiante de Ingeniería de Sistemas
                                     </li>
                                     <li>
-                                        <strong>Juan Manuel Ortiz Pabón - 2210093</strong>
+                                        <strong>Manuela Alejandra García Valbuena - </strong>
                                         <br /> Estudiante de Ingeniería de Sistemas
                                     </li>
                                 </ul>
@@ -66,8 +66,8 @@ const Acerca = () => {
                                     <FontAwesomeIcon icon={faBook} /> Materia:
                                 </h4>
                                 <p>
-                                    Entornos de Programación - E1
-                                    <br /> Profesor: Carlos Adolfo Beltrán Castro
+                                    Ingeniería de Software - D1
+                                    <br /> Profesor: Fernando Rojas
                                 </p>
                             </div>
                             <hr />
@@ -76,9 +76,8 @@ const Acerca = () => {
                                     <FontAwesomeIcon icon={faServer} /> Backend:
                                 </h4>
                                 <ul>
-                                    <li>Node.js</li>
-                                    <li>Express</li>
-                                    <li>MongoDB</li>
+                                    <li>Spring Boot</li>
+                                    <li>Dbeaver/HeidiSQL</li>
                                 </ul>
                             </div>
                             <hr />

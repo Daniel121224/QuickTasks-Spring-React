@@ -14,17 +14,30 @@ const Menu = () => {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to={"/entornos-admin"} className="nav-link">
+                    <Link to={"/proyectos-admin"} className="nav-link">
                         <i className="nav-icon fas fa-edit" />
                         <p>
-                            Entornos
+                            Proyectos
                         </p>
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link to={"/equipos-admin"} className="nav-link">
                         <i className="nav-icon fas fa-users"></i>
-                        <p>Equipos</p>
+                        <p>Tareas</p>
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link to={"/calendario"} className="nav-link">
+                        <i className="nav-icon fas fa-users"></i>
+                        <p>Historial</p>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link to={"/calendario"} className="nav-link">
+                        <i className="nav-icon fas fa-users"></i>
+                        <p>Recordatorios</p>
                     </Link>
                 </li>
                 <li className="nav-item">

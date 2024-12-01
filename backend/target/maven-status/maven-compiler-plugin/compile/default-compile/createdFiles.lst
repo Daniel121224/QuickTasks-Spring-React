@@ -11,6 +11,7 @@ uis\edu\entornos\backendClientes\exception\ExceptionResponse.class
 uis\edu\entornos\backendClientes\servicio\ITareaService.class
 uis\edu\entornos\backendClientes\modelo\Recordatorio.class
 uis\edu\entornos\backendClientes\servicio\UsuarioService.class
+uis\edu\entornos\backendClientes\controlador\AuthController.class
 uis\edu\entornos\backendClientes\modelo\Usuario.class
 uis\edu\entornos\backendClientes\repositorio\IUsuarioRepository.class
 uis\edu\entornos\backendClientes\servicio\IUsuarioService.class
