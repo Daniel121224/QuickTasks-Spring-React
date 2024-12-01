@@ -1,6 +1,8 @@
 package uis.edu.entornos.backendClientes.modelo;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
@@ -9,6 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.ManyToOne;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "tarea")
@@ -25,22 +30,61 @@ public class Tarea {
     private String descripcionTarea;
 
     @Column(name = "fechaEntrega_tarea", nullable = false, length = 50)
-    private String fechaEntregaTarea;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaEntregaTarea;
 
     @Column(name = "completada", nullable = false)
     private boolean completada;
 
-    //Me dio problemas al tener dos llaves foraneas la clase tarea
-    //@ManyToOne
-    //@JoinColumn(name = "idUsuario", referencedColumnName = "idUsuario")
-    //@JsonBackReference
-    //private Usuario usuario;
-
+    
+    
+    //Relación con usuario
+    /* Error 415
     @ManyToOne
-    @JoinColumn(name = "idProyecto", referencedColumnName = "idProyecto")
+    @JoinColumn(name = "idUsuario", referencedColumnName = "idUsuario", nullable = false)
+    private Usuario usuario;
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+    */
+    
+    
+    
+    //Relación con proyecto
+    @ManyToOne
+    @JoinColumn(name = "idProyecto", referencedColumnName = "idProyecto", nullable = true)
     @JsonBackReference
     private Proyecto proyecto;
+    
+    public Proyecto getProyecto() {
+        return proyecto;
+    }
 
+    public void setProyecto(Proyecto proyecto) {
+        this.proyecto = proyecto;
+    }
+
+    
+    //Relación con recordatorio
+    @OneToOne(mappedBy = "tarea", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Recordatorio recordatorio;
+
+    public Recordatorio getRecordatorio() {
+        return recordatorio;
+    }
+
+    public void setRecordatorio(Recordatorio recordatorio) {
+        this.recordatorio = recordatorio;
+    }
+
+    
+    
+    
     // Getters y Setters
     public Integer getIdTarea() {
         return idTarea;
@@ -66,11 +110,11 @@ public class Tarea {
         this.descripcionTarea = descripcionTarea;
     }
 
-    public String getFechaEntregaTarea() {
+    public Date getFechaEntregaTarea() {
         return fechaEntregaTarea;
     }
 
-    public void setFechaEntregaTarea(String fechaEntregaTarea) {
+    public void setFechaEntregaTarea(Date fechaEntregaTarea) {
         this.fechaEntregaTarea = fechaEntregaTarea;
     }
 
@@ -82,19 +126,4 @@ public class Tarea {
         this.completada = completada;
     }
 
-    //public Usuario getUsuario() {
-    //    return usuario;
-    //}
-
-    //public void setUsuario(Usuario usuario) {
-    //    this.usuario = usuario;
-    //}
-
-    public Proyecto getProyecto() {
-        return proyecto;
-    }
-
-    public void setProyecto(Proyecto proyecto) {
-        this.proyecto = proyecto;
-    }
 }

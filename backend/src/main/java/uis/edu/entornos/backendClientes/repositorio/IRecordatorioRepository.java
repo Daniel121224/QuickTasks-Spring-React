@@ -6,10 +6,11 @@ package uis.edu.entornos.backendClientes.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import uis.edu.entornos.backendClientes.modelo.Proyecto;
+import uis.edu.entornos.backendClientes.modelo.Recordatorio;
 
 
 @Repository
-public interface IProyectoRepository extends JpaRepository<Proyecto, Integer>{
+public interface IRecordatorioRepository extends JpaRepository<Recordatorio, Integer> {
     
 }
+

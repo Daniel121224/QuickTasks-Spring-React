@@ -1,5 +1,6 @@
 package uis.edu.entornos.backendClientes.controlador;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.web.bind.annotation.RequestBody;
+import uis.edu.entornos.backendClientes.modelo.Historial;
 //import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import uis.edu.entornos.backendClientes.modelo.Tarea;
+import uis.edu.entornos.backendClientes.servicio.HistorialService;
 import uis.edu.entornos.backendClientes.servicio.TareaService;
 
 @RestController
@@ -26,6 +29,9 @@ public class TareaController {
     
     @Autowired
     private TareaService tareaService;
+    
+    @Autowired
+    private HistorialService historialService;
 
     //Listar las tareas
     @GetMapping("/list")
@@ -54,6 +60,35 @@ public class TareaController {
         .map(c -> ResponseEntity.ok(tareaService.update(tarea)))
         .orElseGet(() -> ResponseEntity.notFound().build());
     }
+    
+    // Marcar tarea como completada y mover al historial
+    @PutMapping("/complete/{id}")
+    public ResponseEntity<Object> completarTarea(@PathVariable("id") Integer id) {
+        return tareaService.findById(id).map(tarea -> {
+            // Marcar la tarea como completada
+            tarea.setCompletada(true); // Marcar como completada
+
+            // Actualizar la tarea en la base de datos
+            tareaService.update(tarea);
+
+            // Crear un objeto Historial
+            Historial historial = new Historial();
+            historial.setNombreTarea(tarea.getNombreTarea());
+            historial.setDescripcionTarea(tarea.getDescripcionTarea());
+            historial.setFechaEntregaTarea(tarea.getFechaEntregaTarea());
+            historial.setFechaCompletada(new Date());
+
+            // Guardar en el historial
+            historialService.save(historial);
+
+            // Eliminar la tarea de la tabla tarea
+            tareaService.delete(id);
+
+            // Retornar una respuesta sin contenido (204 No Content)
+            return ResponseEntity.noContent().build(); // Correcto: Retorna ResponseEntity<Void>
+        }).orElseGet(() -> ResponseEntity.notFound().build()); // Correcto: Retorna ResponseEntity<Void>
+    }
+
     
     //Eliminar tarea
     @DeleteMapping("/{id}")

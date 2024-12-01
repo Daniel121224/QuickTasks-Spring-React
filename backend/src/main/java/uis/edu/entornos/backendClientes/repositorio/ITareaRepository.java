@@ -5,12 +5,11 @@
 package uis.edu.entornos.backendClientes.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import uis.edu.entornos.backendClientes.modelo.Tarea;
 
-/**
- *
- * @author roble
- */
+
+@Repository
 public interface ITareaRepository extends JpaRepository<Tarea, Integer>{
     
 }
