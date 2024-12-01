@@ -1,6 +1,8 @@
 package uis.edu.entornos.backendClientes.controlador;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -61,11 +63,16 @@ public class ProyectoController {
     }
 
     //Eliminar entorno de trabajo
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Proyecto> delete(@PathVariable("id") Integer idProyecto){
-        proyectoService.delete(idProyecto);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+@DeleteMapping("/{id}")
+public ResponseEntity<Map<String, String>> delete(@PathVariable("id") Integer idProyecto){
+    proyectoService.delete(idProyecto);
+    
+    // Devolver un mensaje de éxito en el cuerpo de la respuesta
+    Map<String, String> response = new HashMap<>();
+    response.put("message", "Proyecto eliminado con éxito");
+    
+    return ResponseEntity.ok(response); // Devuelve un código 200 OK con el mensaje
+}
 
 
 }
