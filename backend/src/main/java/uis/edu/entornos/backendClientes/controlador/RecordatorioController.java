@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.*;
 import uis.edu.entornos.backendClientes.modelo.Recordatorio;
 import uis.edu.entornos.backendClientes.servicio.RecordatorioService;
 
+/*
+Controlador API para controlar la gestión de los recordatorios de tareas
+(GET, POST, PUT, DELETE)
+*/
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/recordatorio")

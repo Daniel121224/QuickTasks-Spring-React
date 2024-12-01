@@ -19,6 +19,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+/*
+Controlador API para controlar la gestión de usuarios
+(GET, POST, PUT, DELETE)
+*/
 
 @RestController
 @CrossOrigin("*")

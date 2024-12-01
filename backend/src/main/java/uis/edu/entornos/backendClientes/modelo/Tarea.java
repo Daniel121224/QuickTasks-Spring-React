@@ -15,6 +15,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+/*
+Modelo y definición de los atributos y columnas para la clase Tarea
+*/
+
 @Entity
 @Table(name = "tarea")
 public class Tarea {

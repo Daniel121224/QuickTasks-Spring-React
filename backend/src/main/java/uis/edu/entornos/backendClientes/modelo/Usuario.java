@@ -12,6 +12,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
 
+/*
+Modelo y definición de los atributos y columnas para la clase Usuario
+*/
+
 @Entity
 @Table(name = "usuario")
 public class Usuario {

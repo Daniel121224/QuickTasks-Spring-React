@@ -3,6 +3,10 @@ package uis.edu.entornos.backendClientes.modelo;
 import javax.persistence.*;
 import java.util.Date;
 
+/*
+Modelo y definición de los atributos y columnas para la clase Historial
+*/
+
 @Entity
 @Table(name = "historial")
 public class Historial {

@@ -16,6 +16,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.JoinColumn;
 
+/*
+Modelo y definición de los atributos y columnas para la clase proyecto
+*/
+
 @Entity
 @Table(name = "proyecto")
 public class Proyecto {

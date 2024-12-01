@@ -1,5 +1,10 @@
 package uis.edu.entornos.backendClientes.modelo;
 
+/*
+Configuracion del Login de la aplicación, mediante una consulta a usuarios registrados
+y sus respectivas contraeñas
+*/
+
 public class LoginDto {
 
     private String nombreUsuario;

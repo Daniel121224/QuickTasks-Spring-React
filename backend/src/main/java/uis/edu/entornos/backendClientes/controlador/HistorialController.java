@@ -8,6 +8,11 @@ import uis.edu.entornos.backendClientes.servicio.IHistorialService;
 
 import java.util.List;
 
+/*
+Controlador API para el historial de las tareas completadas
+su función es solo mostrar tareas completadas, por tanto solo Get
+*/
+
 @RestController
 @RequestMapping("/api/historial")
 @CrossOrigin("*")

@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 import java.util.Date;
 
+/*
+Modelo y definición de los atributos y columnas para la clase Recordatorio
+*/
+
 @Entity
 @Table(name = "recordatorio")
 public class Recordatorio {

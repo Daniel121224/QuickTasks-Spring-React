@@ -19,6 +19,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import uis.edu.entornos.backendClientes.modelo.Proyecto;
 import uis.edu.entornos.backendClientes.servicio.ProyectoService;
 
+/*
+Controlador API para controlar la gestión de proyectos
+(GET, POST, PUT, DELETE)
+*/
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/proyecto")

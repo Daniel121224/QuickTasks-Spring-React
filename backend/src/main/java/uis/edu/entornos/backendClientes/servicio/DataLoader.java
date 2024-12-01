@@ -6,6 +6,11 @@ import uis.edu.entornos.backendClientes.servicio.TareaService;
 import uis.edu.entornos.backendClientes.modelo.Tarea;
 import java.util.Date;
 
+/*
+Este data loader permite que se carguen registros en la clase tarea al iniciar la aplicación
+de este modo se proporciona un breve ejemplo de datos cargados en la aplicación
+*/
+
 @Component
 public class DataLoader implements CommandLineRunner {
 

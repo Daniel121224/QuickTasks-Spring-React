@@ -22,6 +22,11 @@ import uis.edu.entornos.backendClientes.modelo.Tarea;
 import uis.edu.entornos.backendClientes.servicio.HistorialService;
 import uis.edu.entornos.backendClientes.servicio.TareaService;
 
+/*
+Controlador API para controlar la gestión de tareas
+(GET, POST, PUT, DELETE)
+*/
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/api/tarea")
