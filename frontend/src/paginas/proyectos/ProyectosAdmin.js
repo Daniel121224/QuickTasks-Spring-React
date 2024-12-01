@@ -23,13 +23,18 @@ const ProyectosAdmin = () => {
 
     const eliminarProyecto = async (e, idProyecto) => {
         e.preventDefault();
-        const response = await APIInvoke.invokeDELETE(`/api/proyecto/${idProyecto}`); // Cambié la ruta de 'eliminarEntorno' a 'eliminarProyecto'
-
-        if (response.message === "Proyecto eliminado con éxito") {
-            const message = 'El proyecto fue eliminado con éxito';
+    
+        try {
+            // Enviar la solicitud DELETE y obtener la respuesta
+            const response = await APIInvoke.invokeDELETE(`/api/proyecto/${idProyecto}`);
+            console.log("Respuesta de la API:", response); // Verificamos qué devuelve la API
+    
+            // Si la respuesta tiene la estructura esperada
+            if (response && response.message === "Proyecto eliminado con éxito") {
+                // Mostrar mensaje de éxito
                 swal({
                     title: 'Información',
-                    text: message,
+                    text: 'El proyecto fue eliminado con éxito',
                     icon: 'success',
                     buttons: {
                         confirm: {
@@ -41,12 +46,16 @@ const ProyectosAdmin = () => {
                         }
                     }
                 });
-                cargarProyectos();
-        } else {
-            const message = 'No fue posible eliminar el proyecto';
+    
+                // Actualizar la lista de proyectos eliminando el proyecto de la lista
+                setProyectos(proyectos.filter((proyecto) => proyecto.idProyecto !== idProyecto));
+    
+            } else {
+                // Si la respuesta no es como se esperaba, mostrar mensaje de error
+                console.error("Error al eliminar proyecto: respuesta inesperada", response);
                 swal({
                     title: 'Error',
-                    text: message,
+                    text: 'No fue posible eliminar el proyecto',
                     icon: 'error',
                     buttons: {
                         confirm: {
@@ -58,8 +67,27 @@ const ProyectosAdmin = () => {
                         }
                     }
                 });
+            }
+        } catch (error) {
+            // Manejo de errores: mostrar en consola el error real
+            console.error("Error en la solicitud DELETE:", error);
+            swal({
+                title: 'Error',
+                text: 'Hubo un problema al eliminar el proyecto. Intenta nuevamente.',
+                icon: 'error',
+                buttons: {
+                    confirm: {
+                        text: 'Aceptar',
+                        value: true,
+                        visible: true,
+                        className: 'btn btn-danger',
+                        closeModal: true
+                    }
+                }
+            });
         }
     }
+    
 
     return (
         <div className="wrapper">
@@ -118,6 +146,7 @@ const ProyectosAdmin = () => {
                                                 <td>
                                                     <Link to={`/tareas-admin/${item.idProyecto}@${item.nombreProyecto}`} className="btn btn-info">Ver Tareas</Link>
                                                     <button onClick={(e) => eliminarProyecto(e, item.idProyecto)} className="btn btn-danger">Eliminar</button>
+                                                    <Link to={`/proyectos-editar/${item.idProyecto}`} className="btn btn-primary">Editar</Link>&nbsp; &nbsp;
                                                 </td>
                                             </tr>
                                         ))

@@ -34,7 +34,7 @@ const Home = () => {
                                     <div className="icon">
                                         <i className="fa fa-edit" />
                                     </div>
-                                    <Link to={"/entornos-admin"} className="small-box-footer">Ver Proyectos <i className="fas fa-arrow-circle-right" /></Link>
+                                    <Link to={"/proyectos-admin"} className="small-box-footer">Ver Proyectos <i className="fas fa-arrow-circle-right" /></Link>
                                 </div>
                             </div>
 

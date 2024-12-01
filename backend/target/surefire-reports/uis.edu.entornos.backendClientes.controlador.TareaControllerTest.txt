@@ -1,4 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: uis.edu.entornos.backendClientes.controlador.TareaControllerTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.667 s - in uis.edu.entornos.backendClientes.controlador.TareaControllerTest
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 3.669 s <<< FAILURE! - in uis.edu.entornos.backendClientes.controlador.TareaControllerTest
+testFindAll  Time elapsed: 0.013 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tareaController': Unsatisfied dependency expressed through field 'historialService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'uis.edu.entornos.backendClientes.servicio.HistorialService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'uis.edu.entornos.backendClientes.servicio.HistorialService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+
+testCreate  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tareaController': Unsatisfied dependency expressed through field 'historialService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'uis.edu.entornos.backendClientes.servicio.HistorialService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'uis.edu.entornos.backendClientes.servicio.HistorialService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+
