@@ -26,7 +26,7 @@ class APIInvoke {
             }
         }
         const url = `${config.api.baseURL}${resource}`
-        let response = (await (await fetch(url, data)).json())
+        let response = (await (await fetch(url, data)).text())
         return response
     }
 

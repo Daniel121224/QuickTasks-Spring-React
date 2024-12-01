@@ -56,11 +56,15 @@ public class ProyectoController {
 
     //Actualizar proyecto
     @PutMapping("/update")
-    public ResponseEntity<Proyecto> update(@RequestBody Proyecto proyecto){
-        return proyectoService.findById(proyecto.getIdProyecto())
-        .map(c -> ResponseEntity.ok(proyectoService.update(proyecto)))
-        .orElseGet(() -> ResponseEntity.notFound().build());
-    }
+public ResponseEntity<String> update(@RequestBody Proyecto proyecto) {
+    return proyectoService.findById(proyecto.getIdProyecto())
+        .map(c -> {
+            proyectoService.update(proyecto); // Actualizamos el proyecto
+            return ResponseEntity.ok("Proyecto actualizado correctamente"); // Respuesta con mensaje
+        })
+        .orElseGet(() -> ResponseEntity.notFound().build()); // Si no se encuentra el proyecto, devolvemos un 404
+}
+
 
     //Eliminar entorno de trabajo
 @DeleteMapping("/{id}")

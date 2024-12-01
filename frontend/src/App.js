@@ -5,7 +5,7 @@ import Login from './paginas/auth/Login';
 import Home from './paginas/Home';
 import ProyectosAdmin from './paginas/proyectos/ProyectosAdmin';
 import EntornosCrear from './paginas/entornos/EntornosCrear';
-import EntornosEditar from './paginas/entornos/EntornosEditar';
+import ProyectosEditar from './paginas/proyectos/ProyectosEditar';
 import TareasAdmin from './paginas/entornos/TareasAdmin';
 import TareasCrear from './paginas/entornos/TareasCrear';
 import TareasEditar from './paginas/entornos/TareasEditar';
@@ -27,7 +27,7 @@ function App() {
           <Route path="/home" exact element={<Home/>}/>
           <Route path="/proyectos-admin" exact element={<ProyectosAdmin/>}/>
           <Route path="/entornos-crear" exact element={<EntornosCrear/>}/>
-          <Route path="/entornos-editar/:identorno" exact element={<EntornosEditar/>}/>
+          <Route path="/proyectos-editar/:idProyecto" exact element={<ProyectosEditar/>}/>
           <Route path="/tareas-admin/:identorno" exact element={<TareasAdmin/>}/>
           <Route path="/tareas-crear/:identorno" exact element={<TareasCrear/>}/>
           <Route path="/tareas-editar/:identorno" exact element={<TareasEditar/>}/>
