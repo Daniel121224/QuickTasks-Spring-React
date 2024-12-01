@@ -35,8 +35,8 @@ public class Usuario {
     @Column(name = "documento", nullable = false, length = 70)
     private String documento;
     
-    @Column(name = "contraseña", nullable = false, length = 70)
-    private String contraseña;
+    @Column(name = "contrasena", nullable = false, length = 70)
+    private String contrasena;
    
 
     //Error 415
@@ -103,11 +103,11 @@ public class Usuario {
         this.correo = correo;
     }
     
-    public String getContraseña(){
-        return contraseña;
+    public String getContrasena(){
+        return contrasena;
     }
     
-    public void setContraseña(String contraseña){
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena){
+        this.contrasena = contrasena;
     }
 }

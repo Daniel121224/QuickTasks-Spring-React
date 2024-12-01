@@ -9,7 +9,7 @@ public class LoginDto {
 
     private String nombreUsuario;
 
-    private String contraseña;
+    private String contrasena;
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -19,12 +19,12 @@ public class LoginDto {
         this.nombreUsuario = nombreUsuario;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
     
 }

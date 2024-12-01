@@ -9,12 +9,12 @@ import uis.edu.entornos.backendClientes.modelo.Usuario;
 
 @Repository
 public interface IUsuarioRepository extends JpaRepository<Usuario, Integer>{
-    @Query("select count(*) from Usuario as u where u.nombre = :nombreUsuario and u.contraseña = :contraseña")
+    @Query("select count(*) from Usuario as u where u.nombre = :nombreUsuario and u.contrasena = :contrasena")
     Integer findByNombreUsuarioAndPassword(@Param("nombreUsuario") String nombreUsuario, 
-                    @Param("contraseña") String contraseña);
+                    @Param("contrasena") String contrasena);
     
 
-    @Query("select u from Usuario as u where u.nombre = :nombreUsuario and u.contraseña = :contraseña")
+    @Query("select u from Usuario as u where u.nombre = :nombreUsuario and u.contrasena = :contrasena")
     Usuario findByNameAndPassword(@Param("nombreUsuario") String nombreUsuario, 
-                    @Param("contraseña") String contraseña);
+                    @Param("contrasena") String contrasena);
 }

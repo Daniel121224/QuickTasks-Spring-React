@@ -44,7 +44,7 @@ public class UsuarioService implements IUsuarioService{
     }
 
     public int login(LoginDto usuarioDto) {
-        int u = usuarioRepo.findByNombreUsuarioAndPassword(usuarioDto.getNombreUsuario(), usuarioDto.getContraseña());
+        int u = usuarioRepo.findByNombreUsuarioAndPassword(usuarioDto.getNombreUsuario(), usuarioDto.getContrasena());
         return u;
     }
 
@@ -52,7 +52,7 @@ public class UsuarioService implements IUsuarioService{
         Map<String, Object> response = new HashMap<>();
         Usuario usuario = null;
         try{
-            usuario = usuarioRepo.findByNameAndPassword(usuarioDto.getNombreUsuario(), usuarioDto.getContraseña());
+            usuario = usuarioRepo.findByNameAndPassword(usuarioDto.getNombreUsuario(), usuarioDto.getContrasena());
             if(usuario == null){
                 response.put("Usuario", null);
                 response.put("Mensaje", "Alerta:Usuario o Password incorrectos");
