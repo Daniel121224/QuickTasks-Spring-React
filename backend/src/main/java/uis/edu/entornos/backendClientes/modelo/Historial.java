@@ -6,7 +6,7 @@ import java.util.Date;
 /*
 Modelo y definición de los atributos y columnas para la clase Historial
 */
-
+//h
 @Entity
 @Table(name = "historial")
 public class Historial {
