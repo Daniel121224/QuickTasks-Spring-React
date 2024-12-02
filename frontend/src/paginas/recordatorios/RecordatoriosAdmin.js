@@ -78,7 +78,7 @@ const RecordatoriosAdmin = () => {
                         <div className="card-header">
                             <h3 className="card-title">
                                 <Link
-                                    to={`/recordatorios-crear/${idTarea}`}
+                                    to={`/recordatorios-crear`}
                                     className="btn btn-block btn-primary btn-sm"
                                 >
                                     Agregar Recordatorio

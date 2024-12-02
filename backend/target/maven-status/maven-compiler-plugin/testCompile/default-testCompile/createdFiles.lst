@@ -1,3 +1,7 @@
 uis\edu\entornos\backendClientes\BackendClientesApplicationTests.class
 uis\edu\entornos\backendClientes\controlador\TareaControllerTest.class
 uis\edu\entornos\backendClientes\servicio\TareaServiceTest.class
+uis\edu\entornos\backendClientes\controlador\UsuarioControllerTest.class
+uis\edu\entornos\backendClientes\servicio\ProyectoServiceTest.class
+uis\edu\entornos\backendClientes\servicio\UsuarioServiceTest.class
+uis\edu\entornos\backendClientes\controlador\ProyectoControllerTest.class

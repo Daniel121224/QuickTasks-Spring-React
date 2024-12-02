@@ -51,6 +51,21 @@ const Home = () => {
                                 </div>
                             </div>
 
+                            
+
+                            <div className="col-lg-3 col-6">
+                                <div className="small-box bg-success">
+                                    <div className="inner">
+                                        <h3>Calendario</h3>
+                                        <p>Planifica tu tiempo</p>
+                                    </div>
+                                    <div className="icon">
+                                        <i className="fa fa-calendar-alt" />
+                                    </div>
+                                    <Link to={"/equipos-admin"} className="small-box-footer">Ver Calendario <i className="fas fa-arrow-circle-right" /></Link>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </section>

@@ -13,6 +13,9 @@ import TareasEditar from './paginas/proyectos/TareasEditar';
 import AllTareasAdmin from './paginas/tareas/AllTareasAdmin';
 
 import RecordatoriosAdmin from './paginas/recordatorios/RecordatoriosAdmin';
+import RecordatoriosCrear from './paginas/recordatorios/RecordatoriosCrear';
+import RecordatoriosEditar from './paginas/recordatorios/RecordatoriosEditar';
+
 import Calendario from './componentes/Calendario';
 //import EquiposAdmin from './paginas/equipos/EquiposAdmin';
 //import EquiposCrear from './paginas/equipos/EquiposCrear';
@@ -47,6 +50,8 @@ function App() {
           <Route path="/all-tareas-admin" exact element={<AllTareasAdmin/>}/>
 
           <Route path="/recordatorios-admin" exact element={<RecordatoriosAdmin/>}/>
+          <Route path="/recordatorios-crear" exact element={<RecordatoriosCrear/>}/>
+          <Route path="/recordatorios-editar/:idRecordatorio" exact element={<RecordatoriosEditar/>}/>
 
           <Route path="/calendario" exact element={<Calendario/>}/>
           
