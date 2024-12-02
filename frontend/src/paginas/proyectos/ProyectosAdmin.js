@@ -13,8 +13,8 @@ const ProyectosAdmin = () => {
     const [proyectos, setProyectos] = useState([]);
 
     const cargarProyectos = async () => {
-        const response = await APIInvoke.invokeGET('/api/proyecto/list'); // Cambié la ruta a /api/proyecto/list
-        setProyectos(response); // Aquí asumo que el API devuelve directamente el array de proyectos
+        const response = await APIInvoke.invokeGET('/api/proyecto/list');
+        setProyectos(response);
     }
 
     useEffect(() => {
@@ -23,15 +23,11 @@ const ProyectosAdmin = () => {
 
     const eliminarProyecto = async (e, idProyecto) => {
         e.preventDefault();
-    
+
         try {
-            // Enviar la solicitud DELETE y obtener la respuesta
             const response = await APIInvoke.invokeDELETE(`/api/proyecto/${idProyecto}`);
-            console.log("Respuesta de la API:", response); // Verificamos qué devuelve la API
-    
-            // Si la respuesta tiene la estructura esperada
+
             if (response && response.message === "Proyecto eliminado con éxito") {
-                // Mostrar mensaje de éxito
                 swal({
                     title: 'Información',
                     text: 'El proyecto fue eliminado con éxito',
@@ -46,13 +42,9 @@ const ProyectosAdmin = () => {
                         }
                     }
                 });
-    
-                // Actualizar la lista de proyectos eliminando el proyecto de la lista
+
                 setProyectos(proyectos.filter((proyecto) => proyecto.idProyecto !== idProyecto));
-    
             } else {
-                // Si la respuesta no es como se esperaba, mostrar mensaje de error
-                console.error("Error al eliminar proyecto: respuesta inesperada", response);
                 swal({
                     title: 'Error',
                     text: 'No fue posible eliminar el proyecto',
@@ -69,8 +61,6 @@ const ProyectosAdmin = () => {
                 });
             }
         } catch (error) {
-            // Manejo de errores: mostrar en consola el error real
-            console.error("Error en la solicitud DELETE:", error);
             swal({
                 title: 'Error',
                 text: 'Hubo un problema al eliminar el proyecto. Intenta nuevamente.',
@@ -87,7 +77,6 @@ const ProyectosAdmin = () => {
             });
         }
     }
-    
 
     return (
         <div className="wrapper">
@@ -103,38 +92,35 @@ const ProyectosAdmin = () => {
                 />
 
                 <section className="content">
+                
+
                     <div className="card">
+
+                        <div className="welcome-section text-center mb-4" style={{ marginTop: '10px' }}>
+                            <h2 className="text-dark">¡Gestiona tus proyectos o asignaturas📚!</h2>
+                            <p className="text-dark">
+                                Aquí puedes gestionar tus proyectos o asignaturas para agrupar tus deberes ¡Explora y organiza tu día!
+                            </p>
+                        </div>
+
                         <div className="card-header">
-                            <h3 className="card-title"><Link to={"/proyectos-crear"} className="btn btn-block btn-primary btn-sm">Agregar Proyecto</Link></h3>
-                            <div className="card-tools">
-                                <button type="button" className="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                    <i className="fas fa-minus" />
-                                </button>
-                                <button type="button" className="btn btn-tool" data-card-widget="remove" title="Remove">
-                                    <i className="fas fa-times" />
-                                </button>
-                            </div>
+                            <h3 className="card-title">
+                                <Link to={"/proyectos-crear"} className="btn btn-block btn-primary btn-sm">Agregar Proyecto</Link>
+                            </h3>
                         </div>
                         <div className="card-body">
-                            <table className="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nombre del Proyecto</th>
-                                        <th>Progreso</th>
-                                        <th>Tareas</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    {
-                                        proyectos.map((item) => (
-                                            <tr key={item.idProyecto}>
-                                                <td>{item.idProyecto}</td>
-                                                <td>{item.nombreProyecto}</td>
-                                                <td>{item.progreso}%</td>
-                                                <td>
+                            <div className="row">
+                                {
+                                    proyectos.map((item) => (
+                                        <div className="col-md-4" key={item.idProyecto}>
+                                            <div className="card mb-4 shadow-sm">
+                                                <div className="card-header bg-primary text-white">
+                                                    <h5 className="card-title">{item.nombreProyecto}</h5>
+                                                </div>
+                                                <div className="card-body">
+                                                    <p><strong>ID:</strong> {item.idProyecto}</p>
+                                                    <p><strong>Progreso:</strong> {item.progreso}%</p>
+                                                    <h6>Tareas:</h6>
                                                     <ul>
                                                         {item.tareas.map((tarea) => (
                                                             <li key={tarea.idTarea}>
@@ -142,22 +128,21 @@ const ProyectosAdmin = () => {
                                                             </li>
                                                         ))}
                                                     </ul>
-                                                </td>
-                                                <td>
-                                                    <Link to={`/tareas-admin/${item.idProyecto}@${item.nombreProyecto}`} className="btn btn-info">Ver Tareas</Link>
-                                                    <button onClick={(e) => eliminarProyecto(e, item.idProyecto)} className="btn btn-danger">Eliminar</button>
-                                                    <Link to={`/proyectos-editar/${item.idProyecto}`} className="btn btn-primary">Editar</Link>&nbsp; &nbsp;
-                                                </td>
-                                            </tr>
-                                        ))
-                                    }
-                                  
-                                </tbody>
-                            </table>
-
+                                                    <div className="d-flex justify-content-between align-items-center">
+                                                        <Link to={`/tareas-admin/${item.idProyecto}@${item.nombreProyecto}`} className="btn btn-info btn-sm">Ver Tareas</Link>
+                                                        <div>
+                                                            <button onClick={(e) => eliminarProyecto(e, item.idProyecto)} className="btn btn-danger btn-sm">Eliminar</button>
+                                                            <Link to={`/proyectos-editar/${item.idProyecto}`} className="btn btn-primary btn-sm ml-2">Editar</Link>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
-
                 </section>
             </div>
             <Footer></Footer>

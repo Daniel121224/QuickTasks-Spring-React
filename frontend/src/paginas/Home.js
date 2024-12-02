@@ -14,6 +14,8 @@ const Home = () => {
             <SidebarContainer></SidebarContainer>
             <div className="content-wrapper" style={{ backgroundImage: `url(${fondoVerde})`, backgroundSize: 'cover' }}>
 
+
+
                 <ContentHeader
                     titulo={"Acceso rápido"}
                     breadCrumb1={"Inicio"}
@@ -22,6 +24,14 @@ const Home = () => {
                 />
 
                 <section className="content">
+                    {/* Sección de bienvenida */}
+                    <div className="welcome-section text-center mb-4" style={{ marginTop: '10px' }}>
+                        <h2 className="text-dark">¡Bienvenido 😊!</h2>
+                        <p className="text-dark">
+                            Aquí puedes gestionar tus proyectos, tareas y calendario de manera eficiente. ¡Explora y organiza tu día!
+                        </p>
+                    </div>
+
                     <div className="container-fluid">
                         <div className="row">
 
@@ -47,7 +57,7 @@ const Home = () => {
                                     <div className="icon">
                                         <i className="fa fa-users" />
                                     </div>
-                                    <Link to={"/equipos-admin"} className="small-box-footer">Ver Equipos <i className="fas fa-arrow-circle-right" /></Link>
+                                    <Link to={"/all-tareas-admin"} className="small-box-footer">Ver Tareas <i className="fas fa-arrow-circle-right" /></Link>
                                 </div>
                             </div>
 
@@ -62,7 +72,7 @@ const Home = () => {
                                     <div className="icon">
                                         <i className="fa fa-calendar-alt" />
                                     </div>
-                                    <Link to={"/equipos-admin"} className="small-box-footer">Ver Calendario <i className="fas fa-arrow-circle-right" /></Link>
+                                    <Link to={"/calendario"} className="small-box-footer">Ver Calendario <i className="fas fa-arrow-circle-right" /></Link>
                                 </div>
                             </div>
 

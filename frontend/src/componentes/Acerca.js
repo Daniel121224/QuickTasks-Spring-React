@@ -7,6 +7,8 @@ import fondoVerde from '../../node_modules/admin-lte/dist/img/fondoverde.jpg';
 import Logo2 from '../../node_modules/admin-lte/dist/img/logo2.png'; // Asegúrate de que la ruta sea correcta
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBullseye, faUser, faUniversity, faBook, faServer, faDesktop } from '@fortawesome/free-solid-svg-icons';
+import img1 from '../../src/assets/1.jpeg'; // Asegúrate de que la ruta de la imagen sea correcta
+import img2 from '../../src/assets/2.jpeg'; // Asegúrate de que la ruta de la imagen sea correcta
 
 const Acerca = () => {
     return (
@@ -22,10 +24,11 @@ const Acerca = () => {
                 />
                 <section className="content">
                     <div className="card">
-                    <div className="card-header text-center">
-                            <img src={Logo2} alt="Logo" style={{ width: '50px'}} />
-                            <h4 className="card-title">Logotipo</h4>
+                        <div className="card-header text-center">
+                            <img src={Logo2} alt="Logo" style={{ width: '150px'}} />
+                            <h4 className="section">Logotipo</h4>  {/* Cambié aquí la clase para que sea 'section' */}
                         </div>
+
                         <div className="card-body">
                             <div className="section">
                                 <h4>
@@ -38,18 +41,21 @@ const Acerca = () => {
                                 <h4>
                                     <FontAwesomeIcon icon={faUser} /> Desarrolladores:
                                 </h4>
-                                <ul>
-                                    <li>
-                                        <strong>Jorge Daniel Robles Ardila - 2210065</strong>
-                                        <br /> roblesardilajorgedaniel@gmail.com
-                                        <br /> Estudiante de Ingeniería de Sistemas
-                                    </li>
-                                    <li>
-                                        <strong>Manuela Alejandra García Valbuena - 2211922</strong>
-                                        <br /> mg2472493@gmail.com
-                                        <br /> Estudiante de Ingeniería de Sistemas
-                                    </li>
-                                </ul>
+                                <div className="row">
+                                    <div className="col-6 text-center">
+                                        <img src={img1} alt="Jorge Daniel Robles" style={{ width: '150px', borderRadius: '50%', marginBottom: '20px' }} />
+                                        <p><strong>Jorge Daniel Robles Ardila - 2210065</strong></p>
+                                        <p>📧 roblesardilajorgedaniel@gmail.com</p>
+                                        <p>Estudiante de Ingeniería de Sistemas</p>
+                                    </div>
+                                    <div className="col-6 text-center">
+                                        <img src={img2} alt="Manuela Alejandra García" style={{ width: '150px', borderRadius: '50%', marginBottom: '20px' }} />
+                                        <p><strong>Manuela Alejandra García Valbuena - 2211922</strong></p>
+                                        <p>📧 mg2472493@gmail.com</p>
+                                        <p>Estudiante de Ingeniería de Sistemas</p>
+                                    </div>
+                                </div>
+
                             </div>
                             <hr />
                             <div className="section">
