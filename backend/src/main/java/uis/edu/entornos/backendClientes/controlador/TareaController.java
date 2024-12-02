@@ -1,7 +1,9 @@
 package uis.edu.entornos.backendClientes.controlador;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -57,13 +59,16 @@ public class TareaController {
     public ResponseEntity<Tarea> create(@RequestBody Tarea tarea){
         return new ResponseEntity<>(tareaService.create(tarea), HttpStatus.CREATED);   
     }
-
+    
     //Actualizar tarea
     @PutMapping("/update")
-    public ResponseEntity<Tarea> update(@RequestBody Tarea tarea){
-        return tareaService.findById(tarea.getIdTarea())
-        .map(c -> ResponseEntity.ok(tareaService.update(tarea)))
-        .orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<String> update(@RequestBody Tarea tarea) {
+            return tareaService.findById(tarea.getIdTarea())
+            .map(c -> {
+                tareaService.update(tarea); // Actualizamos la tarea
+                return ResponseEntity.ok("Tarea actualizado correctamente"); // Respuesta con mensaje
+            })
+            .orElseGet(() -> ResponseEntity.notFound().build()); // Si no se encuentra la tarea, devolvemos un 404
     }
     
     // Marcar tarea como completada y mover al historial
@@ -97,8 +102,14 @@ public class TareaController {
     
     //Eliminar tarea
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id){
-        tareaService.delete(id);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Map<String, String>> delete(@PathVariable("id") Integer idTarea){
+        tareaService.delete(idTarea);
+
+        // Devolver un mensaje de éxito en el cuerpo de la respuesta
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "Tarea eliminada con éxito");
+
+        return ResponseEntity.ok(response); // Devuelve un código 200 OK con el mensaje
     }
+
 }
