@@ -22,21 +22,21 @@ const Menu = () => {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to={"/equipos-admin"} className="nav-link">
-                        <i className="nav-icon fas fa-users"></i>
+                    <Link to={"/all-tareas-admin"} className="nav-link">
+                        <i className="nav-icon fas fa-business-time"></i>
                         <p>Tareas</p>
                     </Link>
                 </li>
                 <li className="nav-item">
                     <Link to={"/calendario"} className="nav-link">
-                        <i className="nav-icon fas fa-users"></i>
+                        <i className="nav-icon fas fa-clock"></i>
                         <p>Historial</p>
                     </Link>
                 </li>
 
                 <li className="nav-item">
-                    <Link to={"/calendario"} className="nav-link">
-                        <i className="nav-icon fas fa-users"></i>
+                    <Link to={"/recordatorios-admin"} className="nav-link">
+                        <i className="nav-icon fas fa-bell"></i>
                         <p>Recordatorios</p>
                     </Link>
                 </li>

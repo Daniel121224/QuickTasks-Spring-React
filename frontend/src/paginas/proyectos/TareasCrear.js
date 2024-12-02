@@ -13,20 +13,16 @@ const TareasCrear = () => {
     const [tareas, setTareas] = useState({
         nombreTarea: '',
         descripcionTarea: '',
-        fecha_entrega_tarea: '',
+        fechaEntregaTarea: '',
         completada: false,
-        id_proyecto: {idproyecto}
+        proyecto: {
+            idProyecto: idproyecto, // Asegúrate de usar la clave exacta que el backend espera.
+        }
     });
 
-    // Comprobar si idproyecto está definido y tiene el formato correcto
-    let idProyecto = '';
-    let nombreProyecto = '';
-    if (idproyecto) {
-        let arreglo = idproyecto.split('@');
-        idProyecto = arreglo[0]; // Obtener el idProyecto
-        nombreProyecto = arreglo[1] || ''; // Obtener el nombre del proyecto, si existe
-    }
-
+    const { idProyecto } = useParams();
+    let arreglo = idProyecto.split('@');
+    const nombreProyecto = arreglo[1];
     const tituloPagina = `Crear/Agregar una Tarea para el Proyecto: ${nombreProyecto}`;
 
     useEffect(() => {
@@ -51,12 +47,13 @@ const TareasCrear = () => {
         const data = {
             nombreTarea: tareas.nombreTarea,
             descripcionTarea: tareas.descripcionTarea,
-            fechaEntregaTarea: tareas.fecha_entrega_tarea,
+            fechaEntregaTarea: tareas.fechaEntregaTarea,
             completada: tareas.completada,
             proyecto: {
-                idProyecto: idProyecto, // Asegúrate de usar la clave exacta que el backend espera.
+                idProyecto: tareas.proyecto.idProyecto, // Asegúrate de usar la clave exacta que el backend espera.
             }
         };
+        
 
         const response = await APIInvoke.invokePOST('/api/tarea/create', data);
         const idTarea = response.data.idTarea;
@@ -156,13 +153,13 @@ const TareasCrear = () => {
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="fecha_entrega_tarea">Fecha de entrega</label>
+                                        <label htmlFor="fechaEntregaTarea">Fecha de entrega</label>
                                         <input
                                             type="datetime-local"
                                             className="form-control"
-                                            id="fecha_entrega_tarea"
-                                            name="fecha_entrega_tarea"
-                                            value={tareas.fecha_entrega_tarea}
+                                            id="fechaEntregaTarea"
+                                            name="fechaEntregaTarea"
+                                            value={tareas.fechaEntregaTarea}
                                             onChange={onChange}
                                             required
                                         />

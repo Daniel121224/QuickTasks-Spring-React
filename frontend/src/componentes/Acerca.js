@@ -45,7 +45,8 @@ const Acerca = () => {
                                         <br /> Estudiante de Ingeniería de Sistemas
                                     </li>
                                     <li>
-                                        <strong>Manuela Alejandra García Valbuena - </strong>
+                                        <strong>Manuela Alejandra García Valbuena - 2211922</strong>
+                                        <br /> mg2472493@gmail.com
                                         <br /> Estudiante de Ingeniería de Sistemas
                                     </li>
                                 </ul>
